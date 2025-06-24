@@ -135,16 +135,21 @@
         .offer-image {
             width: 100%;
             height: 150px;
-            background-color: #ddd;
+            background-color: #f5f5f5;
             border-radius: 8px;
             margin-bottom: 10px;
             overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .offer-image img {
-            width: 100%;
+            width: auto;
             height: 100%;
-            object-fit: cover;
+            max-width: 100%;
+            object-fit: contain;
+            border-radius: 8px;
         }
 
         .offer-name {
@@ -267,16 +272,21 @@
         .other-product-image {
             width: 100%;
             height: 100px;
-            background-color: #ddd;
+            background-color: #f5f5f5;
             border-radius: 8px;
             margin-bottom: 10px;
             overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .other-product-image img {
-            width: 100%;
+            width: auto;
             height: 100%;
-            object-fit: cover;
+            max-width: 100%;
+            object-fit: contain;
+            border-radius: 8px;
         }
 
         .other-product-name {
@@ -339,19 +349,42 @@
 
         .cart-item {
             display: flex;
-            justify-content: space-between;
+            gap: 10px;
             padding: 15px 0;
             border-bottom: 1px solid #eee;
             align-items: center;
         }
 
+        .cart-item-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+            overflow: hidden;
+            flex-shrink: 0;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cart-item-image img {
+            width: auto;
+            height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+        }
+
         .cart-item-info {
             flex-grow: 1;
+            min-width: 0;
         }
 
         .cart-item-name {
             font-weight: 500;
             margin-bottom: 5px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .cart-item-size {
@@ -637,7 +670,7 @@
             <div class="offers-slider" id="offersSlider">
                 <div class="offer-item" data-product-name="Cappuccino">
                     <div class="offer-image">
-                        <img src="https://source.unsplash.com/random/300x150/?cappuccino" alt="Cappuccino">
+                        <img src="cafezes/cap.png" alt="Cappuccino">
                     </div>
                     <div class="offer-name">Cappuccino</div>
                     <div class="offer-variants">
@@ -659,7 +692,7 @@
                
                 <div class="offer-item" data-product-name="Latte">
                     <div class="offer-image">
-                        <img src="https://source.unsplash.com/random/300x150/?latte" alt="Latte">
+                        <img src="cafezes/lat.png" alt="Latte">
                     </div>
                     <div class="offer-name">Latte</div>
                     <div class="offer-variants">
@@ -677,7 +710,7 @@
                
                 <div class="offer-item" data-product-name="Macchiato">
                     <div class="offer-image">
-                        <img src="https://source.unsplash.com/random/300x150/?macchiato" alt="Macchiato">
+                        <img src="cafezes/mac.png" alt="Macchiato">
                     </div>
                     <div class="offer-name">Macchiato</div>
                     <div class="offer-variants">
@@ -706,7 +739,7 @@
         <div class="other-products">
             <div class="other-product-item" data-product-name="Expresso">
                 <div class="other-product-image">
-                    <img src="https://source.unsplash.com/random/300x150/?espresso" alt="Expresso">
+                    <img src="cafezes/ex.png" alt="Expresso">
                 </div>
                 <div class="other-product-name">Expresso</div>
                 <button class="add-to-cart-btn" data-product="Expresso">Adicionar</button>
@@ -714,7 +747,7 @@
             
             <div class="other-product-item" data-product-name="Mocha">
                 <div class="other-product-image">
-                    <img src="https://source.unsplash.com/random/300x150/?mocha" alt="Mocha">
+                    <img src="cafezes/mo.png" alt="Mocha">
                 </div>
                 <div class="other-product-name">Mocha</div>
                 <button class="add-to-cart-btn" data-product="Mocha">Adicionar</button>
@@ -722,7 +755,7 @@
             
             <div class="other-product-item" data-product-name="Americano">
                 <div class="other-product-image">
-                    <img src="https://source.unsplash.com/random/300x150/?americano" alt="Americano">
+                    <img src="cafezes/ame.png" alt="Americano">
                 </div>
                 <div class="other-product-name">Americano</div>
                 <button class="add-to-cart-btn" data-product="Americano">Adicionar</button>
@@ -730,7 +763,7 @@
             
             <div class="other-product-item" data-product-name="Irish">
                 <div class="other-product-image">
-                    <img src="https://source.unsplash.com/random/300x150/?irish-coffee" alt="Irish Coffee">
+                    <img src="cafezes/irish.png" alt="Irish Coffee">
                 </div>
                 <div class="other-product-name">Irish Coffee</div>
                 <button class="add-to-cart-btn" data-product="Irish">Adicionar</button>
@@ -969,9 +1002,16 @@
             cart.forEach((item, index) => {
                 totalItems += item.quantity || 1;
                 
+                // Obtém a imagem do produto
+                const productElement = document.querySelector(`[data-product-name="${item.product}"]`);
+                const productImage = productElement ? productElement.querySelector('img').src : '';
+                
                 const cartItem = document.createElement('div');
                 cartItem.className = 'cart-item';
                 cartItem.innerHTML = `
+                    <div class="cart-item-image">
+                        <img src="${productImage}" alt="${item.product}">
+                    </div>
                     <div class="cart-item-info">
                         <div class="cart-item-name">${item.product}</div>
                         <div class="cart-item-size">${item.size}ml</div>
@@ -1209,10 +1249,31 @@
                             sizeOptions.appendChild(sizeBtn);
                         });
                         document.getElementById('sizePopup').style.display = 'flex';
+                    } else {
+                        // Se não houver variantes, adiciona diretamente
+                        cart.push({
+                            product: product,
+                            size: 'Padrão',
+                            price: getProductPrice(product),
+                            quantity: 1
+                        });
+                        updateCart();
+                        showAddedFeedback(button);
                     }
                 }
             });
         });
+
+        // Função auxiliar para obter preço de produtos sem variantes
+        function getProductPrice(productName) {
+            const prices = {
+                'Expresso': 4.50,
+                'Mocha': 10.50,
+                'Americano': 5.00,
+                'Irish': 12.00
+            };
+            return prices[productName] || 0;
+        }
 
         // Fechar popup de tamanho
         closeSizePopup.addEventListener('click', () => {
