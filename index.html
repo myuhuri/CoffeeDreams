@@ -52,6 +52,16 @@
             padding: 20px;
         }
 
+        .orders-screen {
+            display: none;
+            padding: 20px;
+        }
+
+        .payment-screen {
+            display: none;
+            padding: 20px;
+        }
+
         /* Header */
         .header {
             display: flex;
@@ -130,24 +140,28 @@
             background-color: #f9f9f9;
             border-radius: 10px;
             padding: 15px;
+            display: flex;
+            flex-direction: column;
+            min-height: 320px;
+            width: 100%;
         }
 
         .offer-image {
             width: 100%;
-            height: 150px;
+            height: 180px;
             background-color: #f5f5f5;
             border-radius: 8px;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             overflow: hidden;
             display: flex;
             justify-content: center;
             align-items: center;
+            padding: 10px;
         }
 
         .offer-image img {
-            width: auto;
+            width: 100%;
             height: 100%;
-            max-width: 100%;
             object-fit: contain;
             border-radius: 8px;
         }
@@ -155,63 +169,25 @@
         .offer-name {
             font-weight: bold;
             font-size: 18px;
-            margin-bottom: 5px;
-        }
-
-        .offer-variants {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 10px;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .variant {
-            background-color: white;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 8px 12px;
+            margin-bottom: 15px;
             text-align: center;
-            flex-grow: 1;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-
-        .variant:hover {
-            border-color: #6F4E37;
-        }
-
-        .variant.selected {
-            background-color: #6F4E37;
-            color: white;
-        }
-
-        .variant.selected .variant-price {
-            color: white;
-        }
-
-        .variant-size {
-            font-size: 14px;
-            color: #666;
-        }
-
-        .variant-price {
-            font-weight: bold;
-            color: #6F4E37;
         }
 
         .add-to-cart-btn {
             background-color: #6F4E37;
             color: white;
             border: none;
-            padding: 10px;
+            padding: 12px;
             border-radius: 8px;
             font-size: 16px;
             font-weight: 500;
             cursor: pointer;
-            margin-top: 15px;
-            width: 100%;
+            margin-top: auto;
             transition: all 0.3s;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .add-to-cart-btn.added {
@@ -267,24 +243,27 @@
             background-color: #f9f9f9;
             border-radius: 10px;
             padding: 15px;
+            display: flex;
+            flex-direction: column;
+            min-height: 240px;
         }
 
         .other-product-image {
             width: 100%;
-            height: 100px;
+            height: 120px;
             background-color: #f5f5f5;
             border-radius: 8px;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             overflow: hidden;
             display: flex;
             justify-content: center;
             align-items: center;
+            padding: 10px;
         }
 
         .other-product-image img {
-            width: auto;
+            width: 100%;
             height: 100%;
-            max-width: 100%;
             object-fit: contain;
             border-radius: 8px;
         }
@@ -292,7 +271,8 @@
         .other-product-name {
             font-weight: bold;
             font-size: 16px;
-            margin-bottom: 5px;
+            margin-bottom: 15px;
+            text-align: center;
         }
 
         /* Menu hamburguer */
@@ -368,9 +348,8 @@
         }
 
         .cart-item-image img {
-            width: auto;
+            width: 100%;
             height: 100%;
-            max-width: 100%;
             object-fit: contain;
         }
 
@@ -513,6 +492,35 @@
             cursor: pointer;
             margin-top: 20px;
             width: 100%;
+            display: none; /* Escondido conforme solicitado */
+        }
+
+        .cart-back-btn {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            margin-right: 10px;
+            color: #6F4E37;
+        }
+
+        .cart-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .checkout-btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            margin-top: 10px;
+            width: 100%;
         }
 
         /* Login */
@@ -526,6 +534,7 @@
         .input-field {
             width: 100%;
             margin-bottom: 20px;
+            position: relative;
         }
 
         .input-field label {
@@ -540,6 +549,15 @@
             border: 1px solid #ddd;
             border-radius: 8px;
             font-size: 16px;
+        }
+
+        .forgot-password {
+            position: absolute;
+            right: 0;
+            top: 0;
+            font-size: 12px;
+            color: #6F4E37;
+            cursor: pointer;
         }
 
         .login-btn {
@@ -574,6 +592,90 @@
         .profile-email {
             font-weight: bold;
             margin-bottom: 10px;
+        }
+
+        /* Pedidos */
+        .order-list {
+            margin-top: 20px;
+        }
+
+        .order-item {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .order-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .order-date {
+            color: #666;
+        }
+
+        .order-total {
+            color: #6F4E37;
+        }
+
+        .order-products {
+            margin-top: 10px;
+            padding-left: 15px;
+        }
+
+        .order-product {
+            margin-bottom: 5px;
+        }
+
+        /* Pagamento */
+        .payment-options {
+            margin-top: 20px;
+        }
+
+        .payment-option {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .payment-option:hover {
+            background-color: #eee;
+        }
+
+        .payment-option.selected {
+            background-color: #6F4E37;
+            color: white;
+        }
+
+        .payment-icon {
+            margin-right: 15px;
+            font-size: 24px;
+        }
+
+        .payment-info {
+            flex-grow: 1;
+        }
+
+        .payment-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .payment-description {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .payment-option.selected .payment-description {
+            color: #ddd;
         }
 
         /* Popups */
@@ -615,20 +717,82 @@
             background-color: #6F4E37;
             color: white;
             border: none;
-            padding: 10px;
-            border-radius: 5px;
+            padding: 12px;
+            border-radius: 8px;
             cursor: pointer;
+            font-size: 16px;
+        }
+
+        .size-btn:hover {
+            background-color: #5a3d2b;
         }
 
         .close-btn {
             background-color: #ccc;
             color: #333;
             border: none;
-            padding: 10px;
-            border-radius: 5px;
+            padding: 12px;
+            border-radius: 8px;
             cursor: pointer;
             width: 100%;
             margin-top: 10px;
+            font-size: 16px;
+        }
+
+        .close-btn:hover {
+            background-color: #bbb;
+        }
+
+        .success-popup {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .success-popup i {
+            font-size: 50px;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+
+        .success-popup h2 {
+            color: #4CAF50;
+            margin-bottom: 15px;
+        }
+
+        .confirm-popup {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .confirm-popup h2 {
+            margin-bottom: 20px;
+            color: #6F4E37;
+        }
+
+        .confirm-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .confirm-btn {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .confirm-btn.yes {
+            background-color: #ff4444;
+            color: white;
+        }
+
+        .confirm-btn.no {
+            background-color: #6F4E37;
+            color: white;
         }
     </style>
 </head>
@@ -643,6 +807,7 @@
         <div class="input-field">
             <label for="password">Senha</label>
             <input type="password" id="password" placeholder="Sua senha">
+            <span class="forgot-password" id="forgotPassword">Esqueceu a senha?</span>
         </div>
         <div class="input-field" id="confirmPasswordField" style="display: none;">
             <label for="confirmPassword">Confirmar Senha</label>
@@ -673,20 +838,6 @@
                         <img src="cafezes/cap.png" alt="Cappuccino">
                     </div>
                     <div class="offer-name">Cappuccino</div>
-                    <div class="offer-variants">
-                        <div class="variant" data-product="Cappuccino" data-size="150" data-price="7.99">
-                            <div class="variant-size">150 ml</div>
-                            <div class="variant-price">R$ 7,99</div>
-                        </div>
-                        <div class="variant" data-product="Cappuccino" data-size="180" data-price="9.30">
-                            <div class="variant-size">180 ml</div>
-                            <div class="variant-price">R$ 9,30</div>
-                        </div>
-                        <div class="variant" data-product="Cappuccino" data-size="60" data-price="5.80">
-                            <div class="variant-size">60 ml</div>
-                            <div class="variant-price">R$ 5,80</div>
-                        </div>
-                    </div>
                     <button class="add-to-cart-btn" data-product="Cappuccino">Adicionar ao Carrinho</button>
                 </div>
                
@@ -695,16 +846,6 @@
                         <img src="cafezes/lat.png" alt="Latte">
                     </div>
                     <div class="offer-name">Latte</div>
-                    <div class="offer-variants">
-                        <div class="variant" data-product="Latte" data-size="150" data-price="7.99">
-                            <div class="variant-size">150 ml</div>
-                            <div class="variant-price">R$ 7,99</div>
-                        </div>
-                        <div class="variant" data-product="Latte" data-size="180" data-price="9.30">
-                            <div class="variant-size">180 ml</div>
-                            <div class="variant-price">R$ 9,30</div>
-                        </div>
-                    </div>
                     <button class="add-to-cart-btn" data-product="Latte">Adicionar ao Carrinho</button>
                 </div>
                
@@ -713,16 +854,6 @@
                         <img src="cafezes/mac.png" alt="Macchiato">
                     </div>
                     <div class="offer-name">Macchiato</div>
-                    <div class="offer-variants">
-                        <div class="variant" data-product="Macchiato" data-size="60" data-price="5.80">
-                            <div class="variant-size">60 ml</div>
-                            <div class="variant-price">R$ 5,80</div>
-                        </div>
-                        <div class="variant" data-product="Macchiato" data-size="90" data-price="7.50">
-                            <div class="variant-size">90 ml</div>
-                            <div class="variant-price">R$ 7,50</div>
-                        </div>
-                    </div>
                     <button class="add-to-cart-btn" data-product="Macchiato">Adicionar ao Carrinho</button>
                 </div>
             </div>
@@ -773,7 +904,10 @@
    
     <!-- Tela do Carrinho -->
     <div class="cart-screen" id="cartScreen">
-        <h1 class="section-title">Carrinho</h1>
+        <div class="cart-header">
+            <button class="cart-back-btn" id="cartBackBtn"><i class="fas fa-arrow-left"></i></button>
+            <h1 class="section-title">Carrinho</h1>
+        </div>
        
         <div class="cart-items" id="cartItems">
             <!-- Itens do carrinho serão adicionados aqui dinamicamente -->
@@ -804,6 +938,51 @@
         </div>
        
         <button class="back-btn" id="backBtn">Voltar</button>
+        <button class="checkout-btn" id="checkoutBtn">Finalizar Pedido</button>
+    </div>
+
+    <!-- Tela de Pagamento -->
+    <div class="payment-screen" id="paymentScreen">
+        <div class="header">
+            <div class="menu-toggle" id="paymentMenuToggle"><i class="fas fa-arrow-left"></i></div>
+            <h1 class="section-title">Forma de Pagamento</h1>
+        </div>
+        
+        <div class="payment-options">
+            <div class="payment-option" data-payment="credit">
+                <div class="payment-icon"><i class="far fa-credit-card"></i></div>
+                <div class="payment-info">
+                    <div class="payment-name">Cartão de Crédito</div>
+                    <div class="payment-description">Pague com seu cartão de crédito</div>
+                </div>
+            </div>
+            
+            <div class="payment-option" data-payment="debit">
+                <div class="payment-icon"><i class="fas fa-credit-card"></i></div>
+                <div class="payment-info">
+                    <div class="payment-name">Cartão de Débito</div>
+                    <div class="payment-description">Pague com seu cartão de débito</div>
+                </div>
+            </div>
+            
+            <div class="payment-option" data-payment="pix">
+                <div class="payment-icon"><i class="fas fa-qrcode"></i></div>
+                <div class="payment-info">
+                    <div class="payment-name">PIX</div>
+                    <div class="payment-description">Pague instantaneamente com PIX</div>
+                </div>
+            </div>
+            
+            <div class="payment-option" data-payment="cash">
+                <div class="payment-icon"><i class="fas fa-money-bill-wave"></i></div>
+                <div class="payment-info">
+                    <div class="payment-name">Pagamento na Retirada</div>
+                    <div class="payment-description">Pague quando for buscar seu pedido</div>
+                </div>
+            </div>
+        </div>
+        
+        <button class="checkout-btn" id="confirmPaymentBtn">Confirmar Pagamento</button>
     </div>
 
     <!-- Tela de Perfil -->
@@ -836,11 +1015,23 @@
         
         <button class="back-btn" id="logoutBtn">Sair</button>
     </div>
+
+    <!-- Tela de Pedidos -->
+    <div class="orders-screen" id="ordersScreen">
+        <div class="header">
+            <div class="menu-toggle" id="ordersMenuToggle"><i class="fas fa-arrow-left"></i></div>
+            <h1 class="section-title">Mesa Pedidos</h1>
+        </div>
+        
+        <div class="order-list" id="orderList">
+            <!-- Pedidos serão adicionados aqui dinamicamente -->
+        </div>
+    </div>
    
     <!-- Menu Hamburguer -->
     <div class="hamburger-menu" id="hamburgerMenu">
         <div class="menu-item" id="cartMenuItem"><i class="fas fa-shopping-cart"></i> Carrinho</div>
-        <div class="menu-item"><i class="fas fa-utensils"></i> Mesa pedidos</div>
+        <div class="menu-item" id="ordersMenuItem"><i class="fas fa-utensils"></i> Mesa pedidos</div>
         <div class="menu-item"><i class="fas fa-tag"></i> Promoções</div>
         <div class="menu-item"><i class="fas fa-star"></i> Avaliações</div>
         <div class="menu-item"><i class="fas fa-comment"></i> Fale conosco</div>
@@ -860,9 +1051,32 @@
         </div>
     </div>
 
+    <!-- Popup de Sucesso -->
+    <div class="popup" id="successPopup">
+        <div class="popup-content success-popup">
+            <i class="fas fa-check-circle"></i>
+            <h2>Pedido Finalizado!</h2>
+            <p>Seu pedido foi enviado com sucesso.</p>
+            <button class="close-btn" id="closeSuccessPopup">OK</button>
+        </div>
+    </div>
+
+    <!-- Popup de Confirmação -->
+    <div class="popup" id="confirmPopup">
+        <div class="popup-content confirm-popup">
+            <h2>Remover item</h2>
+            <p>Tem certeza que deseja remover este item do carrinho?</p>
+            <div class="confirm-buttons">
+                <button class="confirm-btn yes" id="confirmRemoveYes">Sim</button>
+                <button class="confirm-btn no" id="confirmRemoveNo">Não</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Firebase SDK -->
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
     
     <script>
         // Configuração do Firebase com suas credenciais
@@ -872,24 +1086,33 @@
             projectId: "coffeedreams-4kfr7u",
             storageBucket: "coffeedreams-4kfr7u.firebasestorage.app",
             messagingSenderId: "11689382771",
-            appId: "1:11689382771:android:3eeda25a2418f00d6cab06"
+            appId: "1:11689382771:android:3eeda25a2418f00d6cab06",
+            databaseURL: "https://coffeedreams-4kfr7u-default-rtdb.firebaseio.com/"
         };
 
         // Inicializa o Firebase
         firebase.initializeApp(firebaseConfig);
         const auth = firebase.auth();
+        const database = firebase.database();
 
         // Elementos da interface
         const loginScreen = document.getElementById('loginScreen');
         const mainScreen = document.getElementById('mainScreen');
         const cartScreen = document.getElementById('cartScreen');
         const profileScreen = document.getElementById('profileScreen');
+        const ordersScreen = document.getElementById('ordersScreen');
+        const paymentScreen = document.getElementById('paymentScreen');
         const authBtn = document.getElementById('authBtn');
         const toggleAuth = document.getElementById('toggleAuth');
         const cartIcon = document.getElementById('cartIcon');
         const backBtn = document.getElementById('backBtn');
+        const cartBackBtn = document.getElementById('cartBackBtn');
+        const checkoutBtn = document.getElementById('checkoutBtn');
+        const confirmPaymentBtn = document.getElementById('confirmPaymentBtn');
         const menuToggle = document.getElementById('menuToggle');
         const profileMenuToggle = document.getElementById('profileMenuToggle');
+        const ordersMenuToggle = document.getElementById('ordersMenuToggle');
+        const paymentMenuToggle = document.getElementById('paymentMenuToggle');
         const hamburgerMenu = document.getElementById('hamburgerMenu');
         const overlay = document.getElementById('overlay');
         const cartItems = document.getElementById('cartItems');
@@ -901,11 +1124,11 @@
         const applyCoupon = document.getElementById('applyCoupon');
         const couponMessage = document.getElementById('couponMessage');
         const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
-        const variants = document.querySelectorAll('.variant');
         const closeSizePopup = document.getElementById('closeSizePopup');
         const sizeOptions = document.getElementById('sizeOptions');
         const profileMenuItem = document.getElementById('profileMenuItem');
         const cartMenuItem = document.getElementById('cartMenuItem');
+        const ordersMenuItem = document.getElementById('ordersMenuItem');
         const profileEmail = document.getElementById('profileEmail');
         const currentPassword = document.getElementById('currentPassword');
         const newPassword = document.getElementById('newPassword');
@@ -918,23 +1141,61 @@
         const confirmPasswordInput = document.getElementById('confirmPassword');
         const confirmPasswordField = document.getElementById('confirmPasswordField');
         const searchInput = document.getElementById('searchInput');
-        const productsList = document.getElementById('productsList');
-        const allProducts = Array.from(document.querySelectorAll('.offer-item, .other-product-item'));
-        
-        // Elementos do slider
+        const orderList = document.getElementById('orderList');
+        const successPopup = document.getElementById('successPopup');
+        const closeSuccessPopup = document.getElementById('closeSuccessPopup');
         const offersSlider = document.getElementById('offersSlider');
         const prevOffer = document.getElementById('prevOffer');
         const nextOffer = document.getElementById('nextOffer');
         const sliderDots = document.getElementById('sliderDots');
         const offerItems = document.querySelectorAll('.offer-item');
-
+        const paymentOptions = document.querySelectorAll('.payment-option');
+        const forgotPassword = document.getElementById('forgotPassword');
+        const confirmPopup = document.getElementById('confirmPopup');
+        const confirmRemoveYes = document.getElementById('confirmRemoveYes');
+        const confirmRemoveNo = document.getElementById('confirmRemoveNo');
+        
         // Variáveis do estado
         let cart = [];
+        let selectedPayment = null;
         const VALID_COUPON = 'DEVSDIVAS25';
         let discountApplied = false;
-        let selectedVariants = {};
         let isSignUp = false;
         let currentSlide = 0;
+        let itemToRemoveIndex = null;
+
+        // Tamanhos e preços para cada produto
+        const productSizes = {
+            'Cappuccino': [
+                { size: '150ml', price: 7.99 },
+                { size: '180ml', price: 9.30 },
+                { size: '60ml', price: 5.80 }
+            ],
+            'Latte': [
+                { size: '150ml', price: 7.99 },
+                { size: '180ml', price: 9.30 }
+            ],
+            'Macchiato': [
+                { size: '60ml', price: 5.80 },
+                { size: '90ml', price: 7.50 }
+            ],
+            'Expresso': [
+                { size: '30ml', price: 4.50 },
+                { size: '60ml', price: 5.00 }
+            ],
+            'Mocha': [
+                { size: '180ml', price: 10.50 },
+                { size: '240ml', price: 12.00 }
+            ],
+            'Americano': [
+                { size: '150ml', price: 5.00 },
+                { size: '300ml', price: 7.00 }
+            ],
+            'Irish': [
+                { size: '180ml', price: 12.00 },
+                { size: '240ml', price: 14.00 }
+            ]
+        };
 
         // Função para formatar valores monetários
         function formatMoney(value) {
@@ -958,7 +1219,8 @@
         // Função para ir para um slide específico
         function goToSlide(slideIndex) {
             currentSlide = slideIndex;
-            const offset = -currentSlide * (offerItems[0].offsetWidth + 15);
+            const itemWidth = offerItems[0].offsetWidth + 15; // Largura do item + gap
+            const offset = -currentSlide * itemWidth;
             offersSlider.style.transform = `translateX(${offset}px)`;
             
             // Atualiza os dots
@@ -991,6 +1253,21 @@
             }
         });
 
+        // Função para filtrar produtos
+        function filterProducts(searchTerm) {
+            const products = document.querySelectorAll('.offer-item, .other-product-item');
+            searchTerm = searchTerm.toLowerCase();
+            
+            products.forEach(product => {
+                const productName = product.dataset.productName.toLowerCase();
+                if (productName.includes(searchTerm)) {
+                    product.style.display = 'flex';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+        }
+
         // Função para atualizar o carrinho
         function updateCart() {
             // Limpa os itens do carrinho
@@ -1014,7 +1291,7 @@
                     </div>
                     <div class="cart-item-info">
                         <div class="cart-item-name">${item.product}</div>
-                        <div class="cart-item-size">${item.size}ml</div>
+                        <div class="cart-item-size">${item.size}</div>
                         <div class="cart-item-price">${formatMoney(item.price * (item.quantity || 1))}</div>
                     </div>
                     <div class="cart-item-actions">
@@ -1060,9 +1337,8 @@
             // Adiciona eventos aos botões de remover
             document.querySelectorAll('.remove-item').forEach(btn => {
                 btn.addEventListener('click', (e) => {
-                    const index = e.target.dataset.index;
-                    cart.splice(index, 1);
-                    updateCart();
+                    itemToRemoveIndex = e.target.dataset.index;
+                    confirmPopup.style.display = 'flex';
                 });
             });
            
@@ -1080,30 +1356,170 @@
             cartCount.textContent = totalItems;
         }
 
-        // Função para mostrar feedback visual no botão de adicionar
-        function showAddedFeedback(button) {
-            const originalText = button.textContent;
-            button.innerHTML = '<i class="fas fa-check"></i> Adicionado';
-            button.classList.add('added');
+        // Função para mostrar popup de seleção de tamanho
+        function showSizePopup(product) {
+            sizeOptions.innerHTML = '';
             
-            setTimeout(() => {
-                button.textContent = originalText;
-                button.classList.remove('added');
-            }, 2000);
+            if (productSizes[product]) {
+                productSizes[product].forEach(size => {
+                    const sizeBtn = document.createElement('button');
+                    sizeBtn.className = 'size-btn';
+                    sizeBtn.textContent = `${size.size} - ${formatMoney(size.price)}`;
+                    sizeBtn.onclick = () => {
+                        // Verifica se o item já está no carrinho
+                        const existingItemIndex = cart.findIndex(item => 
+                            item.product === product && 
+                            item.size === size.size
+                        );
+                        
+                        if (existingItemIndex >= 0) {
+                            // Se já existe, aumenta a quantidade
+                            cart[existingItemIndex].quantity = (cart[existingItemIndex].quantity || 1) + 1;
+                        } else {
+                            // Se não existe, adiciona novo item
+                            cart.push({
+                                product: product,
+                                size: size.size,
+                                price: size.price,
+                                quantity: 1
+                            });
+                        }
+                        
+                        updateCart();
+                        document.getElementById('sizePopup').style.display = 'none';
+                    };
+                    sizeOptions.appendChild(sizeBtn);
+                });
+            } else {
+                // Se não houver tamanhos definidos, adiciona como padrão
+                const sizeBtn = document.createElement('button');
+                sizeBtn.className = 'size-btn';
+                sizeBtn.textContent = `Padrão - ${formatMoney(5.00)}`;
+                sizeBtn.onclick = () => {
+                    cart.push({
+                        product: product,
+                        size: 'Padrão',
+                        price: 5.00,
+                        quantity: 1
+                    });
+                    
+                    updateCart();
+                    document.getElementById('sizePopup').style.display = 'none';
+                };
+                sizeOptions.appendChild(sizeBtn);
+            }
+            
+            document.getElementById('sizePopup').style.display = 'flex';
         }
 
-        // Função para filtrar produtos na pesquisa
-        function filterProducts(searchTerm) {
-            const term = searchTerm.toLowerCase();
+        // Função para salvar pedido no Firebase
+        function saveOrder() {
+            const user = auth.currentUser;
+            if (!user) {
+                alert('Você precisa estar logado para finalizar o pedido');
+                return;
+            }
             
-            allProducts.forEach(product => {
-                const productName = product.dataset.productName.toLowerCase();
-                if (productName.includes(term)) {
-                    product.style.display = 'block';
-                } else {
-                    product.style.display = 'none';
+            const userId = user.uid;
+            const orderRef = database.ref('orders/' + userId);
+            const newOrderRef = orderRef.push();
+            
+            const subtotal = cart.reduce((sum, item) => sum + (item.price * (item.quantity || 1)), 0);
+            const discount = discountApplied ? subtotal * 0.1 : 0;
+            const total = subtotal - discount;
+            
+            const orderData = {
+                date: new Date().toISOString(),
+                items: cart,
+                subtotal: subtotal,
+                discount: discount,
+                total: total,
+                paymentMethod: selectedPayment,
+                status: 'pendente'
+            };
+            
+            newOrderRef.set(orderData)
+                .then(() => {
+                    // Limpa o carrinho após salvar
+                    cart = [];
+                    updateCart();
+                    cartCount.textContent = '0';
+                    discountApplied = false;
+                    couponCode.value = '';
+                    couponMessage.textContent = '';
+                    
+                    // Atualiza a lista de pedidos
+                    loadOrders();
+                    
+                    // Mostra popup de sucesso
+                    successPopup.style.display = 'flex';
+                })
+                .catch((error) => {
+                    console.error('Erro ao salvar pedido:', error);
+                    alert('Erro ao finalizar pedido. Tente novamente.');
+                });
+        }
+
+        // Função para carregar os pedidos do usuário
+        function loadOrders() {
+            const user = auth.currentUser;
+            if (!user) return;
+            
+            const userId = user.uid;
+            const orderRef = database.ref('orders/' + userId);
+            
+            orderRef.on('value', (snapshot) => {
+                const orders = snapshot.val();
+                orderList.innerHTML = '';
+                
+                if (!orders) {
+                    orderList.innerHTML = '<p>Nenhum pedido encontrado.</p>';
+                    return;
                 }
+                
+                Object.keys(orders).forEach((orderId) => {
+                    const order = orders[orderId];
+                    const orderDate = new Date(order.date);
+                    const formattedDate = orderDate.toLocaleDateString('pt-BR', {
+                        day: '2-digit',
+                        month: '2-digit',
+                        year: 'numeric',
+                        hour: '2-digit',
+                        minute: '2-digit'
+                    });
+                    
+                    const orderItem = document.createElement('div');
+                    orderItem.className = 'order-item';
+                    orderItem.innerHTML = `
+                        <div class="order-header">
+                            <span class="order-date">${formattedDate}</span>
+                            <span class="order-total">${formatMoney(order.total)}</span>
+                        </div>
+                        <div class="order-products">
+                            ${order.items.map(item => `
+                                <div class="order-product">
+                                    ${item.quantity}x ${item.product} (${item.size}) - ${formatMoney(item.price * item.quantity)}
+                                </div>
+                            `).join('')}
+                        </div>
+                        <div class="payment-method">
+                            Pagamento: ${getPaymentMethodName(order.paymentMethod)}
+                        </div>
+                    `;
+                    orderList.appendChild(orderItem);
+                });
             });
+        }
+
+        // Função para obter o nome do método de pagamento
+        function getPaymentMethodName(method) {
+            const methods = {
+                'credit': 'Cartão de Crédito',
+                'debit': 'Cartão de Débito',
+                'pix': 'PIX',
+                'cash': 'Pagamento na Retirada'
+            };
+            return methods[method] || method;
         }
 
         // Alternar entre login e cadastro
@@ -1156,6 +1572,8 @@
                         loginScreen.style.display = 'none';
                         mainScreen.style.display = 'block';
                         profileEmail.textContent = userCredential.user.email;
+                        // Carrega os pedidos do usuário
+                        loadOrders();
                     })
                     .catch((error) => {
                         alert('Erro no login: ' + error.message);
@@ -1163,121 +1581,66 @@
             }
         });
 
-        // Evento para selecionar variantes
-        variants.forEach(variant => {
-            variant.addEventListener('click', () => {
-                const product = variant.dataset.product;
-               
-                // Remove a seleção de outras variantes do mesmo produto
-                document.querySelectorAll(`.variant[data-product="${product}"]`).forEach(v => {
-                    v.classList.remove('selected');
+        // Esqueceu a senha
+        forgotPassword.addEventListener('click', () => {
+            const email = emailInput.value;
+            
+            if (!email) {
+                alert('Por favor, digite seu email para redefinir a senha');
+                return;
+            }
+            
+            auth.sendPasswordResetEmail(email)
+                .then(() => {
+                    alert('Email de redefinição de senha enviado. Verifique sua caixa de entrada.');
+                })
+                .catch((error) => {
+                    alert('Erro ao enviar email de redefinição: ' + error.message);
                 });
-               
-                // Seleciona a variante clicada
-                variant.classList.add('selected');
-               
-                // Armazena a variante selecionada
-                selectedVariants[product] = {
-                    product: variant.dataset.product,
-                    size: variant.dataset.size,
-                    price: parseFloat(variant.dataset.price)
-                };
-            });
         });
 
         // Evento para adicionar itens ao carrinho
         addToCartButtons.forEach(button => {
             button.addEventListener('click', () => {
                 const product = button.dataset.product;
-                const selectedVariant = selectedVariants[product];
-               
-                if (selectedVariant) {
-                    // Verifica se o item já está no carrinho
-                    const existingItemIndex = cart.findIndex(item => 
-                        item.product === selectedVariant.product && 
-                        item.size === selectedVariant.size
-                    );
-                    
-                    if (existingItemIndex >= 0) {
-                        // Se já existe, aumenta a quantidade
-                        cart[existingItemIndex].quantity = (cart[existingItemIndex].quantity || 1) + 1;
-                    } else {
-                        // Se não existe, adiciona novo item
-                        cart.push({
-                            product: selectedVariant.product,
-                            size: selectedVariant.size,
-                            price: selectedVariant.price,
-                            quantity: 1
-                        });
-                    }
-                   
-                    updateCart();
-                    showAddedFeedback(button);
-                } else {
-                    // Mostra popup de seleção de tamanho
-                    const variants = document.querySelectorAll(`.variant[data-product="${product}"]`);
-                    if (variants.length > 0) {
-                        sizeOptions.innerHTML = '';
-                        variants.forEach(variant => {
-                            const sizeBtn = document.createElement('button');
-                            sizeBtn.className = 'size-btn';
-                            sizeBtn.textContent = `${variant.dataset.size}ml - ${formatMoney(parseFloat(variant.dataset.price))}`;
-                            sizeBtn.onclick = () => {
-                                // Verifica se o item já está no carrinho
-                                const existingItemIndex = cart.findIndex(item => 
-                                    item.product === product && 
-                                    item.size === variant.dataset.size
-                                );
-                                
-                                if (existingItemIndex >= 0) {
-                                    // Se já existe, aumenta a quantidade
-                                    cart[existingItemIndex].quantity = (cart[existingItemIndex].quantity || 1) + 1;
-                                } else {
-                                    // Se não existe, adiciona novo item
-                                    cart.push({
-                                        product: product,
-                                        size: variant.dataset.size,
-                                        price: parseFloat(variant.dataset.price),
-                                        quantity: 1
-                                    });
-                                }
-                                
-                                updateCart();
-                                document.getElementById('sizePopup').style.display = 'none';
-                                showAddedFeedback(button);
-                            };
-                            sizeOptions.appendChild(sizeBtn);
-                        });
-                        document.getElementById('sizePopup').style.display = 'flex';
-                    } else {
-                        // Se não houver variantes, adiciona diretamente
-                        cart.push({
-                            product: product,
-                            size: 'Padrão',
-                            price: getProductPrice(product),
-                            quantity: 1
-                        });
-                        updateCart();
-                        showAddedFeedback(button);
-                    }
-                }
+                showSizePopup(product);
             });
         });
-
-        // Função auxiliar para obter preço de produtos sem variantes
-        function getProductPrice(productName) {
-            const prices = {
-                'Expresso': 4.50,
-                'Mocha': 10.50,
-                'Americano': 5.00,
-                'Irish': 12.00
-            };
-            return prices[productName] || 0;
-        }
 
         // Fechar popup de tamanho
         closeSizePopup.addEventListener('click', () => {
             document.getElementById('sizePopup').style.display = 'none';
+        });
+
+        // Fechar popup de sucesso
+        closeSuccessPopup.addEventListener('click', () => {
+            successPopup.style.display = 'none';
+            paymentScreen.style.display = 'none';
+            ordersScreen.style.display = 'block';
+        });
+
+        // Confirmar remoção de item
+        confirmRemoveYes.addEventListener('click', () => {
+            if (itemToRemoveIndex !== null) {
+                cart.splice(itemToRemoveIndex, 1);
+                updateCart();
+            }
+            confirmPopup.style.display = 'none';
+            itemToRemoveIndex = null;
+        });
+
+        confirmRemoveNo.addEventListener('click', () => {
+            confirmPopup.style.display = 'none';
+            itemToRemoveIndex = null;
+        });
+
+        // Selecionar método de pagamento
+        paymentOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                paymentOptions.forEach(opt => opt.classList.remove('selected'));
+                option.classList.add('selected');
+                selectedPayment = option.dataset.payment;
+            });
         });
 
         // Aplicar cupom de desconto
@@ -1295,6 +1658,29 @@
             }
         });
 
+        // Finalizar pedido - ir para tela de pagamento
+        checkoutBtn.addEventListener('click', () => {
+            if (cart.length === 0) {
+                alert('Seu carrinho está vazio!');
+                return;
+            }
+            
+            cartScreen.style.display = 'none';
+            paymentScreen.style.display = 'block';
+            selectedPayment = null;
+            paymentOptions.forEach(opt => opt.classList.remove('selected'));
+        });
+
+        // Confirmar pagamento
+        confirmPaymentBtn.addEventListener('click', () => {
+            if (!selectedPayment) {
+                alert('Selecione uma forma de pagamento');
+                return;
+            }
+            
+            saveOrder();
+        });
+
         // Navegação entre telas
         cartIcon.addEventListener('click', () => {
             mainScreen.style.display = 'none';
@@ -1302,10 +1688,27 @@
             updateCart();
         });
 
+        cartBackBtn.addEventListener('click', () => {
+            cartScreen.style.display = 'none';
+            mainScreen.style.display = 'block';
+        });
+
         backBtn.addEventListener('click', () => {
             cartScreen.style.display = 'none';
             profileScreen.style.display = 'none';
+            ordersScreen.style.display = 'none';
+            paymentScreen.style.display = 'none';
             mainScreen.style.display = 'block';
+        });
+
+        ordersMenuToggle.addEventListener('click', () => {
+            ordersScreen.style.display = 'none';
+            mainScreen.style.display = 'block';
+        });
+
+        paymentMenuToggle.addEventListener('click', () => {
+            paymentScreen.style.display = 'none';
+            cartScreen.style.display = 'block';
         });
 
         // Menu hamburguer
@@ -1337,6 +1740,14 @@
             overlay.classList.remove('active');
             mainScreen.style.display = 'none';
             profileScreen.style.display = 'block';
+        });
+
+        ordersMenuItem.addEventListener('click', () => {
+            hamburgerMenu.classList.remove('active');
+            overlay.classList.remove('active');
+            mainScreen.style.display = 'none';
+            ordersScreen.style.display = 'block';
+            loadOrders();
         });
 
         // Atualizar senha
@@ -1393,8 +1804,8 @@
         });
 
         // Pesquisa de produtos
-        searchInput.addEventListener('input', (e) => {
-            filterProducts(e.target.value);
+        searchInput.addEventListener('input', () => {
+            filterProducts(searchInput.value);
         });
 
         // Verifica estado de autenticação ao carregar a página
@@ -1404,13 +1815,22 @@
                 loginScreen.style.display = 'none';
                 mainScreen.style.display = 'block';
                 profileEmail.textContent = user.email;
+                // Carrega os pedidos do usuário
+                loadOrders();
             } else {
                 // Usuário não logado
                 loginScreen.style.display = 'flex';
                 mainScreen.style.display = 'none';
                 cartScreen.style.display = 'none';
                 profileScreen.style.display = 'none';
+                ordersScreen.style.display = 'none';
+                paymentScreen.style.display = 'none';
             }
+        });
+
+        // Ajusta o slider ao redimensionar a tela
+        window.addEventListener('resize', () => {
+            goToSlide(currentSlide);
         });
     </script>
 </body>
