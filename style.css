@@ -467,6 +467,27 @@ body {
     width: 100%;
 }
 
+.clear-orders-btn {
+    background-color: #ff4444;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.clear-orders-btn:hover {
+    background-color: #cc0000;
+}
+
 .cart-back-btn {
     background: none;
     border: none;

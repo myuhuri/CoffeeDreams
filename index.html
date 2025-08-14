@@ -231,6 +231,10 @@
         <div class="order-list" id="orderList">
             <!-- Pedidos serão adicionados aqui dinamicamente -->
         </div>
+        
+        <button class="clear-orders-btn" id="clearOrdersBtn">
+            <i class="fas fa-trash"></i> Limpar Histórico
+        </button>
     </div>
 
     <!-- Tela de Promoções -->
@@ -316,9 +320,9 @@
         
         <div class="contact-info">
             <h3>Outras formas de contato:</h3>
-            <p><i class="fas fa-phone"></i> (99) 99100-0000</p>
-            <p><i class="fas fa-envelope"></i> thaemillytata73365@gmail.com</p>
-            <p><i class="fas fa-map-marker-alt"></i> Rua do Café, 123 - Açailandia/MA</p>
+            <p><i class="fas fa-phone"></i> (11) 98765-4321</p>
+            <p><i class="fas fa-envelope"></i> contato@coffeedreams.com</p>
+            <p><i class="fas fa-map-marker-alt"></i> Rua do Café, 123 - São Paulo/SP</p>
         </div>
     </div>
 
@@ -441,6 +445,18 @@
         </div>
     </div>
 
+    <!-- Popup de Confirmação para Limpar Pedidos -->
+    <div class="popup" id="confirmClearPopup">
+        <div class="popup-content confirm-popup">
+            <h2>Limpar Histórico</h2>
+            <p>Tem certeza que deseja limpar todo o histórico de pedidos? Esta ação não pode ser desfeita.</p>
+            <div class="confirm-buttons">
+                <button class="confirm-btn yes" id="confirmClearYes">Sim</button>
+                <button class="confirm-btn no" id="confirmClearNo">Não</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Firebase SDK -->
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
@@ -535,7 +551,11 @@
         const sendContactBtn = document.getElementById('sendContactBtn');
         const submitReviewBtn = document.getElementById('submitReviewBtn');
         const ratingStars = document.querySelectorAll('.rating-stars i');
-        
+        const clearOrdersBtn = document.getElementById('clearOrdersBtn');
+        const confirmClearPopup = document.getElementById('confirmClearPopup');
+        const confirmClearYes = document.getElementById('confirmClearYes');
+        const confirmClearNo = document.getElementById('confirmClearNo');
+
         // Variáveis do estado
         let cart = [];
         let selectedPayment = null;
@@ -817,8 +837,13 @@
                 
                 if (!orders) {
                     orderList.innerHTML = '<p>Nenhum pedido encontrado.</p>';
+                    // Esconde o botão de limpar se não houver pedidos
+                    clearOrdersBtn.style.display = 'none';
                     return;
                 }
+                
+                // Mostra o botão de limpar se houver pedidos
+                clearOrdersBtn.style.display = 'block';
                 
                 Object.keys(orders).forEach((orderId) => {
                     const order = orders[orderId];
@@ -865,6 +890,14 @@
                     orderList.appendChild(orderItem);
                 });
             });
+        }
+
+        // Função para limpar todos os pedidos
+        function clearOrders() {
+            const user = auth.currentUser;
+            if (!user) return;
+            
+            confirmClearPopup.style.display = 'flex';
         }
 
         // Função para obter o nome do método de pagamento
@@ -1000,6 +1033,32 @@
         confirmRemoveNo.addEventListener('click', () => {
             confirmPopup.style.display = 'none';
             itemToRemoveIndex = null;
+        });
+
+        // Confirmar limpeza de pedidos
+        confirmClearYes.addEventListener('click', () => {
+            const user = auth.currentUser;
+            if (!user) return;
+
+            const userId = user.uid;
+            const orderRef = database.ref('orders/' + userId);
+            
+            orderRef.remove()
+                .then(() => {
+                    orderList.innerHTML = '<p>Nenhum pedido encontrado.</p>';
+                    confirmClearPopup.style.display = 'none';
+                    clearOrdersBtn.style.display = 'none';
+                    alert('Histórico de pedidos limpo com sucesso!');
+                })
+                .catch((error) => {
+                    console.error('Erro ao limpar pedidos:', error);
+                    confirmClearPopup.style.display = 'none';
+                    alert('Erro ao limpar histórico de pedidos. Tente novamente.');
+                });
+        });
+
+        confirmClearNo.addEventListener('click', () => {
+            confirmClearPopup.style.display = 'none';
         });
 
         // Selecionar método de pagamento
@@ -1214,6 +1273,9 @@
         searchInput.addEventListener('input', () => {
             filterProducts(searchInput.value);
         });
+
+        // Limpar histórico de pedidos
+        clearOrdersBtn.addEventListener('click', clearOrders);
 
         // Avaliação por estrelas
         ratingStars.forEach(star => {
