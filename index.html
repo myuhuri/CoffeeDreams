@@ -232,14 +232,158 @@
             <!-- Pedidos serão adicionados aqui dinamicamente -->
         </div>
     </div>
+
+    <!-- Tela de Promoções -->
+    <div class="promotions-screen" id="promotionsScreen">
+        <div class="header">
+            <div class="menu-toggle" id="promotionsMenuToggle"><i class="fas fa-arrow-left"></i></div>
+            <h1 class="section-title">Promoções</h1>
+        </div>
+        
+        <div class="promotions-list">
+            <div class="promotion-item">
+                <div class="promotion-image">
+                    <img src="cafezes/cap.png" alt="Cappuccino Promoção">
+                </div>
+                <div class="promotion-info">
+                    <h3>Cappuccino Especial</h3>
+                    <p>Leve 2 e pague 1 apenas nos fins de semana!</p>
+                    <div class="promotion-price">R$ 15,98 <span>R$ 7,99</span></div>
+                </div>
+            </div>
+            
+            <div class="promotion-item">
+                <div class="promotion-image">
+                    <img src="cafezes/lat.png" alt="Latte Promoção">
+                </div>
+                <div class="promotion-info">
+                    <h3>Latte Duplo</h3>
+                    <p>Todos os lattes em dobro por apenas R$ 2,00 a mais!</p>
+                    <div class="promotion-price">R$ 18,60 <span>R$ 9,30</span></div>
+                </div>
+            </div>
+            
+            <div class="promotion-item">
+                <div class="promotion-image">
+                    <img src="cafezes/mac.png" alt="Macchiato Promoção">
+                </div>
+                <div class="promotion-info">
+                    <h3>Combo Macchiato</h3>
+                    <p>2 Macchiatos por apenas R$ 10,00!</p>
+                    <div class="promotion-price">R$ 11,60 <span>R$ 10,00</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tela de Fale Conosco -->
+    <div class="contact-screen" id="contactScreen">
+        <div class="header">
+            <div class="menu-toggle" id="contactMenuToggle"><i class="fas fa-arrow-left"></i></div>
+            <h1 class="section-title">Fale Conosco</h1>
+        </div>
+        
+        <div class="contact-form">
+            <div class="input-field">
+                <label for="contactName">Nome</label>
+                <input type="text" id="contactName" placeholder="Seu nome">
+            </div>
+            
+            <div class="input-field">
+                <label for="contactEmail">Email</label>
+                <input type="email" id="contactEmail" placeholder="Seu email">
+            </div>
+            
+            <div class="input-field">
+                <label for="contactSubject">Assunto</label>
+                <select id="contactSubject">
+                    <option value="">Selecione um assunto</option>
+                    <option value="duvida">Dúvida</option>
+                    <option value="sugestao">Sugestão</option>
+                    <option value="reclamacao">Reclamação</option>
+                    <option value="elogio">Elogio</option>
+                </select>
+            </div>
+            
+            <div class="input-field">
+                <label for="contactMessage">Mensagem</label>
+                <textarea id="contactMessage" rows="5" placeholder="Sua mensagem"></textarea>
+            </div>
+            
+            <button class="login-btn" id="sendContactBtn">Enviar Mensagem</button>
+            <div class="contact-message" id="contactMessageStatus"></div>
+        </div>
+        
+        <div class="contact-info">
+            <h3>Outras formas de contato:</h3>
+            <p><i class="fas fa-phone"></i> (99) 99100-0000</p>
+            <p><i class="fas fa-envelope"></i> thaemillytata73365@gmail.com</p>
+            <p><i class="fas fa-map-marker-alt"></i> Rua do Café, 123 - Açailandia/MA</p>
+        </div>
+    </div>
+
+    <!-- Tela de Avaliações -->
+    <div class="reviews-screen" id="reviewsScreen">
+        <div class="header">
+            <div class="menu-toggle" id="reviewsMenuToggle"><i class="fas fa-arrow-left"></i></div>
+            <h1 class="section-title">Avaliações</h1>
+        </div>
+        
+        <div class="add-review">
+            <h3>Deixe sua avaliação</h3>
+            <div class="rating-stars">
+                <i class="far fa-star" data-rating="1"></i>
+                <i class="far fa-star" data-rating="2"></i>
+                <i class="far fa-star" data-rating="3"></i>
+                <i class="far fa-star" data-rating="4"></i>
+                <i class="far fa-star" data-rating="5"></i>
+            </div>
+            <div class="input-field">
+                <textarea id="reviewText" rows="3" placeholder="Escreva sua avaliação..."></textarea>
+            </div>
+            <button class="login-btn" id="submitReviewBtn">Enviar Avaliação</button>
+        </div>
+        
+        <div class="reviews-list" id="reviewsList">
+            <div class="review-item">
+                <div class="review-header">
+                    <div class="review-author">Maria Silva</div>
+                    <div class="review-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="review-date">10/05/2023</div>
+                <div class="review-text">Melhor café que já tomei! O atendimento foi excelente e o ambiente muito aconchegante.</div>
+            </div>
+            
+            <div class="review-item">
+                <div class="review-header">
+                    <div class="review-author">João Santos</div>
+                    <div class="review-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                </div>
+                <div class="review-date">05/05/2023</div>
+                <div class="review-text">Gostei muito do cappuccino, mas o atendimento poderia ser mais rápido.</div>
+            </div>
+        </div>
+    </div>
    
     <!-- Menu Hamburguer -->
     <div class="hamburger-menu" id="hamburgerMenu">
         <div class="menu-item" id="cartMenuItem"><i class="fas fa-shopping-cart"></i> Carrinho</div>
         <div class="menu-item" id="ordersMenuItem"><i class="fas fa-utensils"></i> Meus pedidos</div>
-        <div class="menu-item"><i class="fas fa-tag"></i> Promoções</div>
-        <div class="menu-item"><i class="fas fa-star"></i> Avaliações</div>
-        <div class="menu-item"><i class="fas fa-comment"></i> Fale conosco</div>
+        <div class="menu-item" id="promotionsMenuItem"><i class="fas fa-tag"></i> Promoções</div>
+        <div class="menu-item" id="reviewsMenuItem"><i class="fas fa-star"></i> Avaliações</div>
+        <div class="menu-item" id="contactMenuItem"><i class="fas fa-comment"></i> Fale conosco</div>
         <div class="menu-item" id="profileMenuItem"><i class="fas fa-user"></i> Perfil</div>
     </div>
    
@@ -326,6 +470,9 @@
         const profileScreen = document.getElementById('profileScreen');
         const ordersScreen = document.getElementById('ordersScreen');
         const paymentScreen = document.getElementById('paymentScreen');
+        const promotionsScreen = document.getElementById('promotionsScreen');
+        const contactScreen = document.getElementById('contactScreen');
+        const reviewsScreen = document.getElementById('reviewsScreen');
         const authBtn = document.getElementById('authBtn');
         const toggleAuth = document.getElementById('toggleAuth');
         const cartIcon = document.getElementById('cartIcon');
@@ -337,6 +484,9 @@
         const profileMenuToggle = document.getElementById('profileMenuToggle');
         const ordersMenuToggle = document.getElementById('ordersMenuToggle');
         const paymentMenuToggle = document.getElementById('paymentMenuToggle');
+        const promotionsMenuToggle = document.getElementById('promotionsMenuToggle');
+        const contactMenuToggle = document.getElementById('contactMenuToggle');
+        const reviewsMenuToggle = document.getElementById('reviewsMenuToggle');
         const hamburgerMenu = document.getElementById('hamburgerMenu');
         const overlay = document.getElementById('overlay');
         const cartItems = document.getElementById('cartItems');
@@ -353,6 +503,9 @@
         const profileMenuItem = document.getElementById('profileMenuItem');
         const cartMenuItem = document.getElementById('cartMenuItem');
         const ordersMenuItem = document.getElementById('ordersMenuItem');
+        const promotionsMenuItem = document.getElementById('promotionsMenuItem');
+        const contactMenuItem = document.getElementById('contactMenuItem');
+        const reviewsMenuItem = document.getElementById('reviewsMenuItem');
         const profileEmail = document.getElementById('profileEmail');
         const currentPassword = document.getElementById('currentPassword');
         const newPassword = document.getElementById('newPassword');
@@ -379,6 +532,9 @@
         const closeEmptyCartPopup = document.getElementById('closeEmptyCartPopup');
         const paymentConfirmationPopup = document.getElementById('paymentConfirmationPopup');
         const closePaymentConfirmationPopup = document.getElementById('closePaymentConfirmationPopup');
+        const sendContactBtn = document.getElementById('sendContactBtn');
+        const submitReviewBtn = document.getElementById('submitReviewBtn');
+        const ratingStars = document.querySelectorAll('.rating-stars i');
         
         // Variáveis do estado
         let cart = [];
@@ -387,6 +543,7 @@
         let discountApplied = false;
         let isSignUp = false;
         let itemToRemoveIndex = null;
+        let selectedRating = 0;
 
         // Tamanhos e preços para cada produto
         const productSizes = {
@@ -602,9 +759,19 @@
                 const discount = discountApplied ? subtotal * 0.1 : 0;
                 const total = subtotal - discount;
                 
+                // Obter URLs das imagens dos produtos
+                const itemsWithImages = cart.map(item => {
+                    const productElement = document.querySelector(`[data-product-name="${item.product}"]`);
+                    const productImage = productElement ? productElement.querySelector('img').src : '';
+                    return {
+                        ...item,
+                        image: productImage
+                    };
+                });
+                
                 const orderData = {
                     date: new Date().toISOString(),
-                    items: cart,
+                    items: itemsWithImages,
                     subtotal: subtotal,
                     discount: discount,
                     total: total,
@@ -616,6 +783,10 @@
                 setTimeout(async () => {
                     try {
                         await newOrderRef.set(orderData);
+                        
+                        // Limpa o carrinho após o pedido ser salvo
+                        cart = [];
+                        updateCart();
                         
                         // Mostra popup de confirmação de pagamento
                         paymentConfirmationPopup.style.display = 'flex';
@@ -662,20 +833,33 @@
                     
                     const orderItem = document.createElement('div');
                     orderItem.className = 'order-item';
+                    
+                    // Criar HTML dos itens do pedido com imagens
+                    const orderItemsHTML = order.items.map(item => `
+                        <div class="order-product-item">
+                            <div class="order-product-image">
+                                <img src="${item.image}" alt="${item.product}">
+                            </div>
+                            <div class="order-product-details">
+                                <div class="order-product-name">${item.quantity}x ${item.product} (${item.size})</div>
+                                <div class="order-product-price">${formatMoney(item.price * item.quantity)}</div>
+                            </div>
+                        </div>
+                    `).join('');
+                    
                     orderItem.innerHTML = `
                         <div class="order-header">
                             <span class="order-date">${formattedDate}</span>
                             <span class="order-total">${formatMoney(order.total)}</span>
                         </div>
                         <div class="order-products">
-                            ${order.items.map(item => `
-                                <div class="order-product">
-                                    ${item.quantity}x ${item.product} (${item.size}) - ${formatMoney(item.price * item.quantity)}
-                                </div>
-                            `).join('')}
+                            ${orderItemsHTML}
                         </div>
                         <div class="payment-method">
                             Pagamento: ${getPaymentMethodName(order.paymentMethod)}
+                        </div>
+                        <div class="order-status">
+                            Status: ${order.status}
                         </div>
                     `;
                     orderList.appendChild(orderItem);
@@ -882,6 +1066,9 @@
             profileScreen.style.display = 'none';
             ordersScreen.style.display = 'none';
             paymentScreen.style.display = 'none';
+            promotionsScreen.style.display = 'none';
+            contactScreen.style.display = 'none';
+            reviewsScreen.style.display = 'none';
             mainScreen.style.display = 'block';
         });
 
@@ -893,6 +1080,21 @@
         paymentMenuToggle.addEventListener('click', () => {
             paymentScreen.style.display = 'none';
             cartScreen.style.display = 'block';
+        });
+
+        promotionsMenuToggle.addEventListener('click', () => {
+            promotionsScreen.style.display = 'none';
+            mainScreen.style.display = 'block';
+        });
+
+        contactMenuToggle.addEventListener('click', () => {
+            contactScreen.style.display = 'none';
+            mainScreen.style.display = 'block';
+        });
+
+        reviewsMenuToggle.addEventListener('click', () => {
+            reviewsScreen.style.display = 'none';
+            mainScreen.style.display = 'block';
         });
 
         // Menu hamburguer
@@ -932,6 +1134,27 @@
             mainScreen.style.display = 'none';
             ordersScreen.style.display = 'block';
             loadOrders();
+        });
+
+        promotionsMenuItem.addEventListener('click', () => {
+            hamburgerMenu.classList.remove('active');
+            overlay.classList.remove('active');
+            mainScreen.style.display = 'none';
+            promotionsScreen.style.display = 'block';
+        });
+
+        contactMenuItem.addEventListener('click', () => {
+            hamburgerMenu.classList.remove('active');
+            overlay.classList.remove('active');
+            mainScreen.style.display = 'none';
+            contactScreen.style.display = 'block';
+        });
+
+        reviewsMenuItem.addEventListener('click', () => {
+            hamburgerMenu.classList.remove('active');
+            overlay.classList.remove('active');
+            mainScreen.style.display = 'none';
+            reviewsScreen.style.display = 'block';
         });
 
         // Atualizar senha
@@ -992,6 +1215,81 @@
             filterProducts(searchInput.value);
         });
 
+        // Avaliação por estrelas
+        ratingStars.forEach(star => {
+            star.addEventListener('click', () => {
+                const rating = parseInt(star.dataset.rating);
+                selectedRating = rating;
+                
+                // Atualiza visualização das estrelas
+                ratingStars.forEach((s, i) => {
+                    if (i < rating) {
+                        s.classList.remove('far');
+                        s.classList.add('fas');
+                    } else {
+                        s.classList.remove('fas');
+                        s.classList.add('far');
+                    }
+                });
+            });
+        });
+
+        // Enviar avaliação
+        submitReviewBtn.addEventListener('click', () => {
+            const reviewText = document.getElementById('reviewText').value;
+            
+            if (selectedRating === 0) {
+                alert('Por favor, selecione uma avaliação com estrelas');
+                return;
+            }
+            
+            if (!reviewText) {
+                alert('Por favor, escreva sua avaliação');
+                return;
+            }
+            
+            const user = auth.currentUser;
+            if (!user) {
+                alert('Você precisa estar logado para enviar uma avaliação');
+                return;
+            }
+            
+            // Aqui você pode adicionar o código para salvar a avaliação no Firebase
+            alert('Avaliação enviada com sucesso!');
+            document.getElementById('reviewText').value = '';
+            
+            // Resetar estrelas
+            ratingStars.forEach(star => {
+                star.classList.remove('fas');
+                star.classList.add('far');
+            });
+            selectedRating = 0;
+        });
+
+        // Enviar mensagem de contato
+        sendContactBtn.addEventListener('click', () => {
+            const name = document.getElementById('contactName').value;
+            const email = document.getElementById('contactEmail').value;
+            const subject = document.getElementById('contactSubject').value;
+            const message = document.getElementById('contactMessage').value;
+            
+            if (!name || !email || !subject || !message) {
+                document.getElementById('contactMessageStatus').textContent = 'Por favor, preencha todos os campos';
+                document.getElementById('contactMessageStatus').style.color = 'red';
+                return;
+            }
+            
+            // Aqui você pode adicionar o código para enviar a mensagem (por email ou salvar no banco de dados)
+            document.getElementById('contactMessageStatus').textContent = 'Mensagem enviada com sucesso!';
+            document.getElementById('contactMessageStatus').style.color = 'green';
+            
+            // Limpar formulário
+            document.getElementById('contactName').value = '';
+            document.getElementById('contactEmail').value = '';
+            document.getElementById('contactSubject').value = '';
+            document.getElementById('contactMessage').value = '';
+        });
+
         // Verifica estado de autenticação ao carregar a página
         auth.onAuthStateChanged((user) => {
             if (user) {
@@ -1009,6 +1307,9 @@
                 profileScreen.style.display = 'none';
                 ordersScreen.style.display = 'none';
                 paymentScreen.style.display = 'none';
+                promotionsScreen.style.display = 'none';
+                contactScreen.style.display = 'none';
+                reviewsScreen.style.display = 'none';
             }
         });
     </script>
